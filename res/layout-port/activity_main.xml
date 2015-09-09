@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id = "@+id/MainActivity"
+    tools:context=".MainActivity" >
+
+    <Spinner
+        android:id="@+id/Room_Spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/Room_Text" />
+
+    <Spinner
+        android:id="@+id/Building_Spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/Room_Spinner"
+        android:layout_below="@+id/Building_Text" />
+
+    <TextView
+        android:id="@+id/Building_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="@string/Building"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Room_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Building_Spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/Room"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/Enter_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/Room_Spinner"
+        android:layout_below="@+id/Room_Spinner"
+        android:layout_marginTop="17dp"
+        android:onClick="Start"
+        android:text="@string/Enter" />
+    
+    <fragment 
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_below="@id/Enter_Button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/show_map_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Enter_Button"
+        android:layout_alignBottom="@+id/Enter_Button"
+        android:layout_alignLeft="@+id/map"
+        android:onClick="Hide_Map"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawableLeft="@drawable/google_earth_icon" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/Building_Spinner"
+        android:text="Logout" />
+
+</RelativeLayout>
